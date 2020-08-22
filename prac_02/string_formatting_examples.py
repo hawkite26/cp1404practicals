@@ -30,7 +30,6 @@ for i, number in enumerate(numbers):
 
 print("{} {} for about ${:,.0f}".format(year, name, cost))
 
-# TODO: Using a for loop with the range function and string formatting,
 # produce the following right-aligned output (do not use a list):
 #   0
 #  50
