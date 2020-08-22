@@ -2,6 +2,7 @@
 CP1404/CP5632 - Practical
 Broken program to determine score status
 """
+import random
 
 
 def main():
@@ -20,6 +21,12 @@ def determine_result(score):
         return "Passable"
     elif score < 50:
         return "Bad"
+
+
+def generate_random_score():
+    random_score = random.randint(0, 101)
+    result = determine_result(random_score)
+    print("The random score of {} is {}".format(random_score, result))
 
 
 main()
