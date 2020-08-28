@@ -8,7 +8,8 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    for entries in data:
+        print("{} is taught by {:12} and has {:>3} students.".format(entries[0], entries[1], entries[2]))
 
 
 def get_data():
