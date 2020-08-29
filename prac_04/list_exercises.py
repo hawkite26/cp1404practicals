@@ -8,6 +8,7 @@ USERNAMES = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'B
 
 
 def main():
+    """Get username and numbers for list and display information about the list."""
     check_valid_username(USERNAMES)
     numbers = []
     for i in range(5):
@@ -21,6 +22,7 @@ def main():
 
 
 def check_valid_username(usernames):
+    """Check if username is valid."""
     valid_username = False
     while not valid_username:
         username = input("Please enter username: ")
@@ -32,6 +34,7 @@ def check_valid_username(usernames):
 
 
 def check_valid_number():
+    """Check if number is valid."""
     valid_entry = False
     while not valid_entry:
         try:
@@ -43,6 +46,7 @@ def check_valid_number():
 
 
 def print_number_info(definition, number):
+    """Print information appropriately."""
     print("The {} number is {}".format(definition, number))
 
 

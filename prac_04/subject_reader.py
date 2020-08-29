@@ -7,6 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Get and display data for classrooms."""
     data = get_data()
     for entries in data:
         print("{} is taught by {:12} and has {:>3} students.".format(entries[0], entries[1], entries[2]))
