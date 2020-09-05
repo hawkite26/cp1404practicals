@@ -9,6 +9,9 @@ FIRST_LETTER = 0
 
 def main():
     chosen_string = input("Text: ").lower()
+    while chosen_string == "":
+        print("Please enter a string")
+    chosen_string = input("Text: ").lower()
     words = chosen_string.split()
     words.sort()
     word_length = get_word_lengths(words)
