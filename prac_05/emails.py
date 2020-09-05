@@ -7,7 +7,7 @@ Email storing system
 def main():
     email_to_name = {}
     user_email = input("Email: ")
-    while '@' not in user_email:
+    while '@' not in user_email and user_email != '':
         print("That is an invalid email")
         user_email = input("Email: ")
     while user_email != "":
