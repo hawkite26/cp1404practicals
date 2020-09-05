@@ -21,6 +21,7 @@ def main():
 
 
 def count_words(words):
+    """Count words and add them to dictionary"""
     word_to_count = {}
     for word in words:
         if word in word_to_count:
@@ -31,6 +32,7 @@ def count_words(words):
 
 
 def get_word_lengths(words):
+    """Check word lengths and add to a list"""
     word_length = []
     for word in words:
         word_length.append(len(word))

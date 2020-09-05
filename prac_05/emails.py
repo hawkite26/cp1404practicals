@@ -19,6 +19,7 @@ def main():
 
 
 def get_real_name(user_email):
+    """Check if the predicted name is the real name"""
     possible_name = find_possible_name(user_email)
     user_answer = input("Is your name {}? (Y/n) ".format(possible_name)).lower()
     while user_answer != 'y' and user_answer != 'n' and user_answer != '':
@@ -32,6 +33,7 @@ def get_real_name(user_email):
 
 
 def find_possible_name(user_email):
+    """Identify possible name"""
     stop_index = user_email.find('@')
     email_name = user_email[:stop_index]
     first_last_name = email_name.split('.')

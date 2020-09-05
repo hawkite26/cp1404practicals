@@ -20,6 +20,7 @@ def main():
 
 
 def display_valid_colours():
+    """Show valid colours"""
     for colour in COLOUR_TO_HEX:
         print(colour, end=", ")
     print()
