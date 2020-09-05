@@ -12,9 +12,10 @@ def main():
     chosen_string = input("Text: ").lower()
     words = chosen_string.split()
     words.sort()
+    word_length = get_word_lengths(words)
     word_to_count = count_words(words)
     for word in word_to_count:
-        print("{} : {}".format(word, word_to_count[word]))
+        print("{:{}} : {}".format(word, max(word_length), word_to_count[word]))
 
 
 def count_words(words):
@@ -25,6 +26,13 @@ def count_words(words):
         else:
             word_to_count[word] = 1
     return word_to_count
+
+
+def get_word_lengths(words):
+    word_length = []
+    for word in words:
+        word_length.append(len(word))
+    return word_length
 
 
 main()
