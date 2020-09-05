@@ -4,7 +4,6 @@ Word occurrences counter
 """
 
 
-from operator import itemgetter
 FIRST_LETTER = 0
 
 
