@@ -4,7 +4,7 @@
 class ProgrammingLanguage:
     """Represent a Programming Language object."""
 
-    def __init__(self, name="", typing_style="", reflection=False, year_released=int("")):
+    def __init__(self, name, typing_style, reflection, year_released):
         """Takes language variables"""
         self.name = name
         self.style = typing_style
@@ -18,5 +18,6 @@ class ProgrammingLanguage:
             return False
 
     def __str__(self):
-        return "{}, {} typing, Reflection={}, First appeared in {}"
+        return "{}, {} typing, Reflection={}, First appeared in {}".format(self.name, self.style, self.reflection,
+                                                                           self.year)
 
