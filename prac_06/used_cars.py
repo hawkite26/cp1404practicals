@@ -18,9 +18,7 @@ def main():
     print(limo.fuel)
     limo.drive(115)
     print(limo.odometer)
-
-    print("Car {}, {}".format(my_car.fuel, my_car.odometer))
-    print("Car {self.fuel}, {self.odometer}".format(self=my_car))
+    print(limo)
 
 
 main()
