@@ -4,17 +4,17 @@ BoxLayout:
         orientation: "horizontal"
         TextInput:
             id: input_number
-            text: '7'
+            text: '1'
             font_size: 48
             multiline: False
         BoxLayout:
             orientation: "vertical"
             Button:
                 text: "Up"
-                on_press: app.handle_up_calculate(int(input_number.text))
+                on_press: app.handle_increment(input_number.text, 1)
             Button:
                 text:"Down"
-                on_press: app.handle_down_calculate(int(input_number.text))
+                on_press: app.handle_increment(input_number.text, -1)
     Button:
         text: "Convert m to km"
         on_press: app.handle_calculate(int(input_number.text))
