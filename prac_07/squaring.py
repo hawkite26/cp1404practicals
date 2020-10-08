@@ -24,5 +24,7 @@ class SquareNumberApp(App):
         result = value ** 2
         self.root.ids.output_label.text = str(result)
 
+# Edited as requested
+
 
 SquareNumberApp().run()
