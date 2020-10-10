@@ -22,10 +22,22 @@ def main():
             display_total_fare(total_fare)
         if user_choice == "d":
             current_taxi.drive(int(input("Drive how far? ")))
-            calculate_total_fare(total_fare)
+            current_fare = current_taxi.get_fare()
+            taxi_name = get_taxi_name(current_taxi)
+            print("Your {} fare cost you {:.2f}".format(taxi_name, current_fare))
+            total_fare = calculate_total_fare(total_fare, current_fare)
+            current_taxi.start_fare()
             display_total_fare(total_fare)
         display_menu()
         user_choice = get_user_choice()
+
+
+def get_taxi_name(current_taxi):
+    taxi_name = current_taxi
+    taxi_name = str(taxi_name).split()
+    taxi_name = taxi_name[0].split(",")
+    taxi_name = taxi_name[0]
+    return taxi_name
 
 
 def display_menu():
@@ -58,12 +70,13 @@ def get_taxi_choice(taxis):
     return taxi_choice
 
 
-def calculate_total_fare(total_fare):
-
+def calculate_total_fare(total_fare, current_fare):
+    total_fare += current_fare
+    return total_fare
 
 
 def display_total_fare(total_fare):
-    print("Bill to date: {:.2f}".format(total_fare))
+    print("Bill to date: ${:.2f}".format(total_fare))
 
 
 main()
