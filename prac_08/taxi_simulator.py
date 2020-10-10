@@ -46,6 +46,7 @@ def get_taxi_choice(taxis):
     while taxi_choice < 0 or taxi_choice > (len(taxis) - 1):
         print("Invalid choice")
         taxi_choice = int(input("Choose taxi: "))
+    return taxi_choice
 
 
 main()
