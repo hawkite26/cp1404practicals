@@ -11,12 +11,18 @@ def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer",
                                                                                       200, 4)]
     current_taxi = None
+    total_fare = 0
     display_menu()
     user_choice = get_user_choice()
     while user_choice != "q":
         if user_choice == "c":
             display_taxis(taxis)
             taxi_choice = get_taxi_choice(taxis)
+            current_taxi = taxis[taxi_choice]
+            display_total_fare(total_fare)
+        if user_choice == "d":
+            current_taxi.drive(int(input("Drive how far? ")))
+        user_choice = get_user_choice()
 
 
 def display_menu():
@@ -47,6 +53,14 @@ def get_taxi_choice(taxis):
         print("Invalid choice")
         taxi_choice = int(input("Choose taxi: "))
     return taxi_choice
+
+
+# def calculate_total_fare(total_fare):
+
+
+
+def display_total_fare(total_fare):
+    print("Bill to date: {:.2f}".format(total_fare))
 
 
 main()
