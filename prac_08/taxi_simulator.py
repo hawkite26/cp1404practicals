@@ -22,6 +22,9 @@ def main():
             display_total_fare(total_fare)
         if user_choice == "d":
             current_taxi.drive(int(input("Drive how far? ")))
+            calculate_total_fare(total_fare)
+            display_total_fare(total_fare)
+        display_menu()
         user_choice = get_user_choice()
 
 
@@ -55,7 +58,7 @@ def get_taxi_choice(taxis):
     return taxi_choice
 
 
-# def calculate_total_fare(total_fare):
+def calculate_total_fare(total_fare):
 
 
 
