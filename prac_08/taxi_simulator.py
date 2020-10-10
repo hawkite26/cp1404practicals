@@ -30,6 +30,9 @@ def main():
             display_total_fare(total_fare)
         display_menu()
         user_choice = get_user_choice()
+    print("Total trip cost: ${:.2f}".format(total_fare))
+    print("Taxis are now:")
+    display_taxis(taxis)
 
 
 def get_taxi_name(current_taxi):
