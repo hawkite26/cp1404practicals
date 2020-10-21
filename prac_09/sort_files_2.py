@@ -1,5 +1,5 @@
 """
-CP1404 File sorting program
+CP1404 File sorting program Part 2
 Kye Bryce
 """
 
@@ -30,7 +30,23 @@ def main():
         if file_extension not in file_extensions:
             file_extensions.append(file_extension)
 
-    print(file_extensions)
+    # Loop through available file extensions and ask which folder to put in and add to dictionary
+    directory_for_extensions = {}
+    for extension in file_extensions:
+        # Ask for new directory name
+        new_directory = input("What category would you like to sort {} files into? ".format(extension))
+
+        # Make dictionary to associate extension to directory
+        if extension not in directory_for_extensions:
+            directory_for_extensions[extension] = new_directory
+
+        # Try to make new directory
+        try:
+            os.mkdir(new_directory)
+        except FileExistsError:
+            pass
+
+    print(directory_for_extensions)
 
 
 main()
