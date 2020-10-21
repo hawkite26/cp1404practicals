@@ -34,7 +34,24 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
+    new_name = ""
+    filename.replace(" ", "_").replace(".TXT", ".txt")
+    # I could not figure out how to use enumerate. Please demonstrate in pull request if possible.
+    current_index = 0
+    for character in filename:
+        new_character = character
+        try:
+            if current_index == 0 or filename[current_index - 1] == '_':
+                new_character = new_character.upper()
+            elif character == '_':
+                new_character = character
+            elif filename[current_index + 1].isupper():
+                new_character += '_'
+        except IndexError:
+            pass
+        new_name += new_character
+        current_index += 1
+
     return new_name
 
 
