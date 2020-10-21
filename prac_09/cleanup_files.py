@@ -42,7 +42,7 @@ def get_fixed_filename(filename):
     for character in filename:
         new_character = character
         try:
-            if current_index == 0 or filename[current_index - 1] == '_':
+            if filename[current_index - 1] == '_':
                 new_character = new_character.upper()
             elif character == '_':
                 new_character = character
