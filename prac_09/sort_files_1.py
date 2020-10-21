@@ -22,6 +22,16 @@ def main():
         if os.path.isdir(filename):
             continue
 
+        # Find file extension type
+        file_extension_index = filename.find('.')
+        file_extension = filename[file_extension_index + 1:]
+
+        # Make new directories with file extension type
+        try:
+            os.mkdir(file_extension)
+        except FileExistsError:
+            pass
+
 
 
 
