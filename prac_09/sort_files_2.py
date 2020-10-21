@@ -46,7 +46,12 @@ def main():
         except FileExistsError:
             pass
 
-    print(directory_for_extensions)
+    # Add files to correct directory
+    for extension in directory_for_extensions:
+        file_destination = directory_for_extensions[extension]
+        for filename in os.listdir('.'):
+            if extension in filename:
+                shutil.move(filename, file_destination)
 
 
 main()
