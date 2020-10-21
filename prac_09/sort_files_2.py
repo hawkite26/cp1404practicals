@@ -13,6 +13,9 @@ def main():
     # Enter directory
     os.chdir('FilesToSort')
 
+    # Extensions list
+    file_extensions = []
+
     # Loop through each file in the (current) directory
     for filename in os.listdir('.'):
         # Ignore directories, just process files
@@ -23,14 +26,11 @@ def main():
         file_extension_index = filename.find('.')
         file_extension = filename[file_extension_index + 1:]
 
-        # Make new directories with file extension type
-        try:
-            os.mkdir(file_extension)
-        except FileExistsError:
-            pass
+        # Add file extension to list if not found in list
+        if file_extension not in file_extensions:
+            file_extensions.append(file_extension)
 
-        # Add files to corresponding folders
-        shutil.move(filename, file_extension)
+    print(file_extensions)
 
 
 main()
